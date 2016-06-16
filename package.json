@@ -1,0 +1,17 @@
+{
+  "name": "es-user-importer-ldap",
+  "version": "0.0.1",
+  "description": "A simple script to import ldap users to elasticsearch",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js -c ldap.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "dependencies": {
+    "elasticsearch": "^11.0.1",
+    "joi": "^8.4.2",
+    "ldapjs": "^1.0.0",
+    "minimist": "^1.2.0"
+  }
+}
