@@ -82,8 +82,9 @@ ldapClient.search(
         elasticsearchClient.count({
           index: '.kibana',
           type: 'users',
-          id: user.username
+          q: 'username: "'+ user.username +'"'
         }, function(error, response) {
+          console.log('response iis' + JSON.stringify(response));
           if (response.count == 0) {
             elasticsearchClient.index({
               index: '.kibana',
@@ -125,6 +126,6 @@ ldapClient.search(
     res.on('end', function(result) {
       console.log('status: ' + result.status);
       //TODO exit the scripts once search is done
-      process.exit();
+      //process.exit();
     });
   });
